@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>About page</h2>
+
+    {% for number in list_of_numbers %}    <!-- iterate list -->
+        <p>{{ number }}</p>
+    {% endfor %}   <!-- end for-loop -->
+
+    <h2>{{ page_title }}</h2>
 
     <p>
         The formation of the group grew out of a meeting Gandalf had with Thorin 
@@ -51,5 +56,42 @@
         </div>
     </div>
 
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h3>Oin</h3>
+            <p>
+                Óin was the older brother of Glóin, cousin of Dwalin and Balin, and uncle of Gimli. Óin's uncle was Fundin, the
+                father of Balin and Dwalin.            
+                Óin fought in the Battle of Azanulbizar along with Thorin Oakenshield, and in TA 2941 joined Thorin's company on the
+                quest to reclaim the Lonely Mountain, wearing a brown hood.[2] Óin was one of the Dwarves who bet that Bilbo would
+                come along with them to reclaim the Lonely Mountain. Óin and his brother Glóin were usually in charge of preparing
+                the fire for the Company, as they were the most skilled of the group. He fought in and survived the Battle of Five
+                Armies, and later settled in the Lonely Mountain with King Dáin II Ironfoot, along with many other Dwarves of the
+                company of Thorin.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="https://vignette.wikia.nocookie.net/lotr/images/2/20/Oin_2.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img src="https://vignette.wikia.nocookie.net/lotr/images/f/fc/Gloin_2.jpg/" alt="">
+        </div>
+        <div class="col-md-7">
+            <h3>Fili and Kili</h3>
+            <p>
+                Glóin was born in TA 2783, after the dragon Smaug desolated Erebor. He was the younger child of Gróin and younger
+                brother of Óin.            
+                In TA 2799, Glóin was known to have fought in the Battle of Azanulbizar, the last battle of the War of the Dwarves
+                and Orcs, though it is unknown how significant his contribution was, being 16 years old.            
+                In TA 2879, in the Blue Mountains, while in exile, his son Gimli was born to him and an unknown wife. In March of TA
+                2941 in Bree, Thorin Oakenshield met by chance the wizard Gandalf the Grey, pushing Thorin to reclaim Erebor, so
+                that Smaug wouldn't ally with Sauron. When Gandalf mentioned Hobbits, Glóin referred them as "simpletons" and also
+                said that Hobbits "would never dare to come within smelling distance of the nakedest dragonet new from the shell".
+            </p>
+        </div>
+    </div>
 
 {% endblock %}
