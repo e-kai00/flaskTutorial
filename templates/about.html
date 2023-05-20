@@ -24,16 +24,34 @@
     {% for member in company %}   <!-- for-loop for 'company' variable from 'about' view in run.py -->
 
         <div class="row featurette">
-            <div class="col-md-7">
-                <h3>{{ member.name }}</h3>
-                <p>{{ member.description }}</p>
-            </div>
-            <div class="col-md-5">
-                <img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">
-            </div>
+
+            {% if loop.index % 2 != 0 %}            <!-- display odd index: description - image  -->
+                <div class="col-md-7">
+                    <h3>{{ loop.index }}.{{ member.name }}</h3>   <!-- {{ loop.index }} to show index number -->
+                    <p>{{ member.description }}</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">
+                </div>
+
+            {% else %}                              <!-- display even index: image - description -->
+
+                <div class="col-md-5">
+                    <img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">
+                </div>
+                <div class="col-md-7">
+                    <h3>{{ loop.index }}.{{ member.name }}</h3>   <!-- {{ loop.index }} to show index number -->
+                    <p>{{ member.description }}</p>
+                </div>
+                        
+            {% endif %}
+
         </div>  
         
-        <hr class="featurette-divider">
+        
+        {% if loop.index != loop.length %}
+            <hr class="featurette-divider">
+        {% endif %}
     
     {% endfor %}
 
